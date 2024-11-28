@@ -24,7 +24,6 @@ const App = () => {
   useEffect(() => {
     searchMovie("Spiderman");
   }, []);
-
   return (
     <div className="app">
       <h1>MovieLand</h1>
@@ -42,7 +41,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
-            <MovieCard movie={movie} />
+            <MovieCard movie={movie} key={movie.imdbID}/>
           ))}
         </div>
       ) : (
